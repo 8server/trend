@@ -14,4 +14,6 @@ use App\Http\Controllers\TrendController;
 |
 */
 
-Route::get('/trends',[TrendController::class,'index']);
+Route::get('/',function() {
+    return view('trends/index');
+});
