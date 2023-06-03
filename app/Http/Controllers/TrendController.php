@@ -9,6 +9,6 @@ class TrendController extends Controller
 {
     public function index(Trend $trend)
   {
-    return $trend->get();
+    return view('trends/index')->with(['trends' => $trend ->get()]);
   }
 }
