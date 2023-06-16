@@ -10,17 +10,24 @@
         <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Index') }}
+            {{ __('Trend') }}
         </h2>
          </x-slot>
         
     </head>
-    <body class="antialiased">
-       <h1>Trend Name</h1>
-       <div class = 'trends'>
-       </div>
-    </body>
     
+    <body>
+    <h1>Trends</h1>
+
+
+    @foreach ($trends['storySummaries']['trendingStories'] as $story)
+    <h2>{{ $story['title'] }}</h2>
+    <p>{{ $story['shareUrl'] }}</p>
+    {{-- その他の要素も表示する場合は適宜追加 --}}
+　　@endforeach
+
+    
+    </body>
     </x-app-layout>
     
 </html>

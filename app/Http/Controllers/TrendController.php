@@ -14,18 +14,21 @@ class TrendController extends Controller
     'hl' => 'ja-JP',
     'tz' => -540,
     'geo' => 'JP',
+    'time' => 'all',
+    'category' => 0,
     ];
+    
     $gt = new GTrends($options);
     
-    $keyWordList = ['Java'];
-    $category = 0;
-    $time = 'today 12-m';
-    $property = '';
+    // $keyWordList = ['Java'];
+    // $category = 0;
+    // $time = 'today 12-m';
+    // $property = '';
     
-    $result = $gt->explore($keyWordList, $category, $time, $property);
+    $result = $gt -> getRealTimeSearchTrends();
         
-    dd($result);
+    // dd($result);
         
-    return view('trends/index')->with(['trends' => $result]);
+    return view('trends.index')->with(['trends' => $result]);
   }
 }
